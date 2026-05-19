@@ -1,0 +1,6 @@
+# Build tools (não vão para o deploy)
+proof/
+add_proof.py
+
+# Claude Code
+.claude/
