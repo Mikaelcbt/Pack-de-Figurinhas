@@ -1447,7 +1447,44 @@
     font-size: 17px;
     color: rgba(247,244,230,0.65);
     max-width: 460px;
-    margin: 0 auto;
+    margin: 0 auto 28px;
+  }
+  .pa-strip {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 100px;
+    padding: 12px 28px;
+  }
+  .pa-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+  .pa-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .pa-val {
+    font-family: "Anton", sans-serif;
+    font-size: 24px;
+    line-height: 1;
+  }
+  .pa-val.bad {
+    text-decoration: line-through;
+    text-decoration-color: #E1262C;
+    text-decoration-thickness: 3px;
+    color: rgba(255,255,255,0.4);
+  }
+  .pa-val.good { color: var(--ouro); }
+  .pa-arrow {
+    font-size: 18px;
+    color: rgba(255,255,255,0.25);
   }
 
   /* Carousel wrapper */
@@ -1755,73 +1792,60 @@
   </div>
 </section>
 
-<!-- ===================== VALUE SECTION ===================== -->
-<section class="value" id="oferta">
+<!-- ===================== SOCIAL PROOF ===================== -->
+<section class="proof" id="depoimentos">
   <div class="container">
-    <div class="value-head">
-      <div class="eyebrow">A conta não fecha</div>
-      <h2>
-        Completar o álbum<br>
-        custa <span class="strike">uma fortuna</span> <span class="gold">— ou R$ 19,90.</span>
-      </h2>
-      <p>Você já sabe como é — ou vai lembrar. Compra, troca, repete a do goleiro suplente 8 vezes, e a que importa nunca cai. Pra você ou pro seu filho: aqui a conta é outra.</p>
+    <div class="proof-head">
+      <div class="eyebrow">Clientes reais</div>
+      <h2>Quem comprou,<br><span class="gold">aprovou de verdade.</span></h2>
+      <p class="proof-sub">Prints reais do WhatsApp. Sem filtro, sem edição.</p>
+      <div class="pa-strip">
+        <div class="pa-item">
+          <span class="pa-label">Via pacotes</span>
+          <span class="pa-val bad">R$ 1.247</span>
+        </div>
+        <div class="pa-arrow">→</div>
+        <div class="pa-item">
+          <span class="pa-label">Combo completo</span>
+          <span class="pa-val good">R$ 19,90</span>
+        </div>
+      </div>
     </div>
 
-    <div class="value-grid">
-      <article class="vcard bad">
-        <div class="stage">Cenário 1 · Otimista</div>
-        <h3>Você compra <em>pacote por pacote</em></h3>
-        <div class="photo">
-          <img src="assets/asset_01.jpg" alt="Vários pacotes Copa do Mundo 2026 espalhados sobre o álbum aberto">
+    <div class="car-wrapper">
+      <button class="car-btn car-prev" aria-label="Anterior">&#8249;</button>
+      <div class="car-viewport">
+        <div class="car-track" id="proofTrack">
+          <div class="car-slide">
+            <div class="proof-card" data-proof-idx="0">
+              <img src="assets/testimonial-1.jpg" alt="Print de WhatsApp: cliente imprimiu figurinhas da Copa numa Epson e confirmou que saiu no tamanho original – Muito parecida com a original" loading="lazy">
+              <div class="proof-badge">Muito parecida com a original ✓</div>
+            </div>
+          </div>
+          <div class="car-slide">
+            <div class="proof-card" data-proof-idx="1">
+              <img src="assets/testimonial-2.jpg" alt="Print de WhatsApp: cliente mostra figurinhas da Copa 2018 impressas em casa com Messi, Ronaldo e outros – Qualidade belíssima" loading="lazy">
+              <div class="proof-badge">Qualidade belíssima ✓</div>
+            </div>
+          </div>
+          <div class="car-slide">
+            <div class="proof-card" data-proof-idx="2">
+              <img src="assets/testimonial-3.jpg" alt="Print de WhatsApp: filho de cliente colando figurinhas impressas em casa – Meu filho amou, a qualidade ficou ótima" loading="lazy">
+              <div class="proof-badge">Meu filho amou ❤️ ✓</div>
+            </div>
+          </div>
+          <div class="car-slide">
+            <div class="proof-card" data-proof-idx="3">
+              <img src="assets/testimonial-4.jpg" alt="Print de WhatsApp: cliente segurando folhas impressas da Copa 2022 – Ótimas figurinhas obg" loading="lazy">
+              <div class="proof-badge">Ótimas figurinhas ✓</div>
+            </div>
+          </div>
         </div>
-        <div class="price-line">
-          <span class="cur">R$</span>
-          <span class="num">1.247</span>
-          <span class="unit">,00 estimado</span>
-        </div>
-        <ul>
-          <li>Em média 250+ pacotes para fechar o álbum</li>
-          <li>Repetidas que ninguém quer trocar</li>
-          <li>A figurinha do Neymar? Só na sorte</li>
-        </ul>
-      </article>
-
-      <article class="vcard bad">
-        <div class="stage">Cenário 2 · Caça às raras</div>
-        <h3>Você caça as <em>avulsas</em> no marketplace</h3>
-        <div class="photo">
-          <img src="assets/asset_02.jpg" alt="Arte com Neymar de camisa da Seleção e a palavra CONVOCADO em destaque, indicando o retorno do jogador para a Copa 2026">
-        </div>
-        <div class="price-line">
-          <span class="cur">R$</span>
-          <span class="num">7.000</span>
-          <span class="unit">+ em raras</span>
-        </div>
-        <ul>
-          <li>Neymar avulso custa até R$ 1.800 sozinho</li>
-          <li>Risco de falsa, de não receber, de dor de cabeça</li>
-          <li>Você ainda precisa das outras 600+ figurinhas</li>
-        </ul>
-      </article>
-
-      <article class="vcard good">
-        <div class="stage">Cenário 3 · O atalho</div>
-        <h3>Você fecha <em>tudo de uma vez</em></h3>
-        <div class="photo">
-          <img src="assets/asset_04.png" alt="Álbum da Copa 2026 aberto na página da seleção brasileira com Neymar Jr. entre os jogadores">
-        </div>
-        <div class="price-line">
-          <span class="cur">R$</span>
-          <span class="num">19</span>
-          <span class="unit">,90 — combo</span>
-        </div>
-        <ul>
-          <li>Todos os pacotes para zerar o álbum</li>
-          <li>Figurinha do Neymar Jr. garantida no combo</li>
-          <li>Brinde surpresa pra quem pagar no PIX</li>
-        </ul>
-      </article>
+      </div>
+      <button class="car-btn car-next" aria-label="Próximo">&#8250;</button>
     </div>
+
+    <div class="car-dots" id="proofDots"><button class="car-dot active" data-idx="0" aria-label="Slide 1"></button><button class="car-dot" data-idx="1" aria-label="Slide 2"></button><button class="car-dot" data-idx="2" aria-label="Slide 3"></button><button class="car-dot" data-idx="3" aria-label="Slide 4"></button></div>
   </div>
 </section>
 
@@ -1860,52 +1884,6 @@
   </div>
 </section>
 
-
-<!-- ===================== SOCIAL PROOF ===================== -->
-<section class="proof" id="depoimentos">
-  <div class="container">
-    <div class="proof-head">
-      <div class="eyebrow">Clientes reais</div>
-      <h2>Quem comprou,<br><span class="gold">aprovou de verdade.</span></h2>
-      <p class="proof-sub">Prints reais do WhatsApp. Sem filtro, sem edição.</p>
-    </div>
-
-    <div class="car-wrapper">
-      <button class="car-btn car-prev" aria-label="Anterior">&#8249;</button>
-      <div class="car-viewport">
-        <div class="car-track" id="proofTrack">
-          <div class="car-slide">
-            <div class="proof-card" data-proof-idx="0">
-              <img src="assets/asset_20.png" alt="Cliente imprimiu figurinhas da Copa em casa numa impressora Epson – resultado idêntico ao original" loading="lazy">
-              <div class="proof-badge">Muito parecida com a original ✓</div>
-            </div>
-          </div>
-          <div class="car-slide">
-            <div class="proof-card" data-proof-idx="1">
-              <img src="assets/asset_21.png" alt="Cliente mostra álbum completo da Copa 2018 com figurinhas impressas em casa" loading="lazy">
-              <div class="proof-badge">Qualidade belíssima ✓</div>
-            </div>
-          </div>
-          <div class="car-slide">
-            <div class="proof-card" data-proof-idx="2">
-              <img src="assets/asset_22.png" alt="Filho de cliente feliz com as figurinhas da Copa impressas em casa" loading="lazy">
-              <div class="proof-badge">Meu filho amou ❤️ ✓</div>
-            </div>
-          </div>
-          <div class="car-slide">
-            <div class="proof-card" data-proof-idx="3">
-              <img src="assets/asset_23.png" alt="Cliente com folhas impressas das figurinhas da Copa 2022" loading="lazy">
-              <div class="proof-badge">Ótimas figurinhas ✓</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="car-btn car-next" aria-label="Próximo">&#8250;</button>
-    </div>
-
-    <div class="car-dots" id="proofDots"><button class="car-dot active" data-idx="0" aria-label="Slide 1"></button><button class="car-dot" data-idx="1" aria-label="Slide 2"></button><button class="car-dot" data-idx="2" aria-label="Slide 3"></button><button class="car-dot" data-idx="3" aria-label="Slide 4"></button></div>
-  </div>
-</section>
 
 <!-- ===================== LIGHTBOX ===================== -->
 <div class="lb" id="lb" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Ver prova social">
