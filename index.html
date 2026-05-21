@@ -2,7 +2,7 @@
 <html lang="pt-BR"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Figurinha — Zera o Álbum Copa 2026 · Combo completo por R$ 19,90</title>
+<title>Figurinha — Zera o Álbum Copa 2026 · Combo completo por R$ 9,90</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -351,10 +351,8 @@
     .hero-sub { font-size: 15px; }
     .hero-26 { font-size: 190px; right: -28%; top: 28%; opacity: 0.25; }
 
-    .hero-cards {
-      min-height: 320px;
-      transform: scale(0.72);
-      margin: -60px auto -30px;
+    .hvs-wrap {
+      max-width: 300px;
     }
 
     .price-block { flex-direction: column; gap: 10px; align-items: flex-start; }
@@ -392,7 +390,7 @@
 
   @media (max-width: 380px) {
     h1.hero-title { font-size: 42px; }
-    .hero-cards { transform: scale(0.6); margin: -80px auto -50px; }
+    .hvs-wrap { max-width: 260px; }
     .countdown .num { font-size: 30px; }
     .final-cta { font-size: 18px; }
   }
@@ -735,39 +733,46 @@
   .trust-row .item{ display:flex; align-items:center; gap:8px; }
   .trust-row svg{ width:16px; height:16px; }
 
-  /* hero right column — floating card stack */
-  .hero-cards{
+  /* hero right column — video showcase */
+  .hero-video-showcase{
     position:relative;
-    min-height: 520px;
-    display: flex; align-items: center; justify-content: center;
+    display:flex; align-items:center; justify-content:center;
+    padding: 20px 0;
   }
-  .card-float{
-    position:absolute;
-    border-radius: 14px;
+  .hvs-wrap{
+    position:relative;
+    width:100%;
+    max-width:400px;
+    border-radius:20px;
     overflow:hidden;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.55), 0 6px 12px rgba(0,0,0,0.3);
-    border: 6px solid var(--branco);
-  }
-  .card-float img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .card-float.c1{
-    width: 280px; aspect-ratio: 3/4;
-    transform: rotate(-9deg) translate(-90px, 30px);
-    animation: floatA 6s ease-in-out infinite;
-    z-index:1;
-  }
-  .card-float.c2{
-    width: 320px; aspect-ratio: 3/4;
-    transform: rotate(5deg) translate(50px, -20px);
+    box-shadow:
+      0 0 0 2px rgba(255,215,0,0.4),
+      0 35px 70px rgba(255,215,0,0.18),
+      0 30px 60px rgba(0,0,0,0.65);
     animation: floatB 7s ease-in-out infinite;
-    z-index:3;
-    box-shadow: 0 35px 70px rgba(255,215,0,0.25), 0 30px 60px rgba(0,0,0,0.55);
-    border-color: var(--amarelo);
   }
-  .card-float.c3{
-    width: 240px; aspect-ratio: 3/4;
-    transform: rotate(14deg) translate(140px, 110px);
-    animation: floatA 8s ease-in-out infinite;
-    z-index:2;
+  .hvs-video{
+    width:100%;
+    height:auto;
+    display:block;
+    max-height:560px;
+    object-fit:cover;
+  }
+  .hvs-badge{
+    position:absolute; top:14px; left:14px; z-index:5;
+    display:inline-flex; align-items:center; gap:7px;
+    background:rgba(10,10,26,0.82);
+    color:var(--ouro);
+    border:1px solid rgba(255,215,0,0.4);
+    padding:6px 12px; border-radius:999px;
+    font-size:11px; letter-spacing:0.14em; font-weight:800; text-transform:uppercase;
+    backdrop-filter:blur(8px);
+  }
+  .hvs-badge::before{
+    content:""; width:6px; height:6px; border-radius:50%;
+    background:var(--verde);
+    box-shadow:0 0 8px rgba(0,255,90,0.7);
+    animation:pulse 1.6s infinite;
   }
   @keyframes floatA{
     0%,100%{ translate: 0 0; }
@@ -776,19 +781,6 @@
   @keyframes floatB{
     0%,100%{ translate: 0 0; }
     50%{ translate: 0 16px; }
-  }
-
-  .card-rare-tag{
-    position:absolute; top:14px; left:14px; z-index:5;
-    display:inline-flex; align-items:center; gap:6px;
-    background:#0A0A1A; color:var(--ouro);
-    border:1.5px solid var(--ouro);
-    padding:6px 10px; border-radius:6px;
-    font-size:11px; letter-spacing:0.16em; font-weight:800; text-transform:uppercase;
-  }
-  .card-rare-tag::before{
-    content:""; width:6px; height:6px; border-radius:50%; background:var(--ouro);
-    box-shadow:0 0 8px var(--ouro);
   }
 
   /* hero bottom strip */
@@ -1404,7 +1396,7 @@
     .hero-photo{ display:none; }
     .hero-26{ font-size: 280px; right:-20%; top:30%; }
     .price-now .tag{ right:auto; left:0; top:-14px; }
-    .hero-cards{ min-height: 460px; transform: scale(0.9); }
+    .hvs-wrap{ max-width: 340px; }
     .topbar nav .mini-cta{ padding: 8px 12px; font-size:11px; }
   }
 
@@ -1713,7 +1705,7 @@
     <div>
       <div class="hero-flag-tag">
         <span class="pulse"></span>
-        <span>NEYMAR JR. CONVOCADO · COPA 2026</span>
+        <span>ENDRICK + NEYMAR CONVOCADOS · COPA 2026</span>
       </div>
 
       <h1 class="hero-title">
@@ -1724,7 +1716,7 @@
       </h1>
 
       <p class="hero-sub">
-        Todos os pacotes da <b>Copa do Mundo 2026</b> num combo. Pra você ou pro seu filho — <b>figurinha do Neymar</b> garantida no lote.
+        <b>Endrick, Neymar</b> e toda a convocação — num só arquivo. Todos os pacotes da <b>Copa do Mundo 2026</b>, pra você ou pro seu filho completar o álbum sem gastar uma fortuna.
       </p>
 
       <div class="price-block">
@@ -1733,9 +1725,9 @@
           <s>em figurinhas avulsas</s>
         </div>
         <div class="price-now">
-          <span class="tag">-98%</span>
+          <span class="tag">-99%</span>
           <span class="small">Combo álbum completo</span>
-          <span class="big">R$ 19<sup>,90</sup></span>
+          <span class="big">R$ 9<sup>,90</sup></span>
         </div>
       </div>
 
@@ -1760,16 +1752,12 @@
       </div>
     </div>
 
-    <div class="hero-cards" aria-hidden="true">
-      <div class="card-rare-tag" style="top:-10px; right:-10px; z-index:6;">Raríssima</div>
-      <div class="card-float c1">
-        <img src="assets/asset_03.jpg" alt="Página do álbum da Copa 2026 mostrando a figurinha do Neymar entre os jogadores da seleção brasileira">
-      </div>
-      <div class="card-float c2">
-        <img src="assets/asset_00.jpg" alt="Figurinha do Neymar Jr. com camisa amarela da Seleção, fundo turquesa, número 23 ao fundo, escudo da CBF, escudo da FIFA e bandeira do Brasil">
-      </div>
-      <div class="card-float c3">
-        <img src="assets/asset_01.jpg" alt="Pilha de pacotes coloridos da coleção Copa do Mundo 2026">
+    <div class="hero-video-showcase">
+      <div class="hvs-wrap">
+        <div class="hvs-badge">Veja como fica</div>
+        <video class="hvs-video" autoplay muted loop playsinline>
+          <source src="assets/como%20fica.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
@@ -1778,16 +1766,16 @@
     <div class="marquee" aria-hidden="true">
       <span>★ Figurinhas originais</span><i></i>
       <span>Todos os pacotes inclusos</span><i></i>
+      <span>Endrick + Neymar convocados</span><i></i>
       <span>Frete para todo Brasil</span><i></i>
       <span>Pague no PIX e ganhe brinde</span><i></i>
-      <span>Figurinha rara do Neymar</span><i></i>
-      <span>★ Pra pais e colecionadores</span><i></i>
+      <span>★ Convocação completa atualizada</span><i></i>
       <span>★ Figurinhas originais</span><i></i>
       <span>Todos os pacotes inclusos</span><i></i>
+      <span>Endrick + Neymar convocados</span><i></i>
       <span>Frete para todo Brasil</span><i></i>
       <span>Pague no PIX e ganhe brinde</span><i></i>
-      <span>Figurinha rara do Neymar</span><i></i>
-      <span>★ Pra pais e colecionadores</span><i></i>
+      <span>★ Convocação completa atualizada</span><i></i>
     </div>
   </div>
 </section>
@@ -1807,7 +1795,7 @@
         <div class="pa-arrow">→</div>
         <div class="pa-item">
           <span class="pa-label">Combo completo</span>
-          <span class="pa-val good">R$ 19,90</span>
+          <span class="pa-val good">R$ 9,90</span>
         </div>
       </div>
     </div>
@@ -1859,7 +1847,7 @@
         <br>acabou.
       </h2>
       <p class="lead">
-        Tiramos um lote limitado direto da distribuidora pra fazer essa oferta. Quando esse contador chegar a zero — ou o estoque virar zero antes — o combo sai do ar e a figurinha do Neymar volta a custar o preço da rua.
+        Atualizamos o álbum com a convocação completa — Endrick, Neymar e todos os convocados — e fizemos um lote limitado nesse preço. Quando o contador zerar, ou o estoque acabar antes, o combo sai do ar.
       </p>
 
       <div class="stock-bar" aria-hidden="true"><div class="fill"></div></div>
@@ -1902,13 +1890,13 @@
   <div class="container final-inner">
     <div class="eyebrow">Última chamada</div>
     <h2>
-      Cola a do <span class="gold">Neymar.</span><br>
+      Endrick. Neymar. <span class="gold">Convocação completa.</span><br>
       Zera o álbum.
     </h2>
-    <p class="sub">Um combo. Todos os pacotes. A figurinha que o Brasil inteiro quer — pra você ou pra quem você ama. Por menos do que um lanche.</p>
+    <p class="sub">Um combo. Todos os pacotes. A convocação inteira — pra você ou pra quem você ama. Por menos do que um lanche.</p>
 
     <a href="https://ggcheckout.app/checkout/v2/Kfp20J8WuhEBBrA3RA6A" class="final-cta" id="cta-buy">
-      Garantir por R$ 19,90 <span class="arrow">→</span>
+      Garantir por R$ 9,90 <span class="arrow">→</span>
     </a>
 
     <div class="badges">
@@ -1944,7 +1932,7 @@
     </div>
 
     <h2 class="reveal-title" id="reveal-title"><span class="yel">Neymar</span> Jr.</h2>
-    <p class="reveal-sub">Acabou de ser convocado. Ele <b>não existia</b> no álbum até ontem. Agora vem garantido — no seu álbum ou no do seu filho.</p>
+    <p class="reveal-sub">Convocado. Ele e o Endrick <b>não existiam</b> no álbum até ontem. Agora os dois vêm garantidos — no seu álbum ou no do seu filho.</p>
 
     <a href="https://ggcheckout.app/checkout/v2/Kfp20J8WuhEBBrA3RA6A" class="modal-cta" id="modal-cta">Quero a do Neymar →</a>
 
@@ -1960,7 +1948,7 @@
 <!-- ===================== STICKY MOBILE CTA ===================== -->
 <a href="https://ggcheckout.app/checkout/v2/Kfp20J8WuhEBBrA3RA6A" class="sticky-cta">
   <span>Garantir álbum + Neymar</span>
-  <span class="price">R$ 19,90</span>
+  <span class="price">R$ 9,90</span>
 </a>
 
 <script>
@@ -2128,7 +2116,7 @@
     const t = e.currentTarget;
     t.innerHTML = 'Bora pro carrinho... ✓';
     setTimeout(() => {
-      t.innerHTML = 'Garantir por R$ 19,90 <span class="arrow">→</span>';
+      t.innerHTML = 'Garantir por R$ 9,90 <span class="arrow">→</span>';
     }, 1800);
   });
 </script>
